@@ -7,15 +7,48 @@
 </head>
 <body>
     <form>
-        <label for="userName">
-            Name:
-            <input type="email" id="userName" placeholder="Enter Your Name">
-        </label>
+        <fieldset>
+            <legend>User Detail</legend>
+            <label for="email">
+                Email
+                <input type="email" id="email" required>
+            </label>
+            <br>
+            <label for="dateOfBirth">
+                Date of Birth
+                <input type="date" id="dateOfBirth" required>
+            </label>
+            <p>
+                <label for=""><input type="radio" name="gender">Male </label>
+                <label for=""><input type="radio" name="gender">Female </label>
+            </p>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Service Details</legend>
+            <p>
+                <label for=""><input type="checkbox">ATM </label>
+                <label for=""><input type="checkbox">SMS </label>
+                <label for=""><input type="checkbox">Call</label>
+            </p>
+            <select>
+                <option value="">HTML</option>
+                <option value="">CSS</option>
+                <option value="">JAVASCRIPT</option>
+            </select>
+    
+            <br>
+            <br>
+            <input type="file" required>
+            <br>
+            <br>
+            <textarea rows="10" cols="50" placeholder="Enter Your Comment" required></textarea>
+            <br>
 
-        <br>
-        <br>
+        </fieldset>
 
-        <textarea cols="100" rows="10" placeholder="Enter Your Comment"></textarea>
+
+        <input type="submit">
     </form>
 </body>
 </html>
