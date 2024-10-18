@@ -1,0 +1,20 @@
+/* h1{color: red;} */
+.header{color: red;}
+#num{
+    color: purple;
+}
+
+/* p > b{
+    color: blue;
+} */
+
+p b{
+    color: blue;
+}
+/* h1+p{
+    color: green;
+} */
+
+h1~p{
+    color: green;
+}

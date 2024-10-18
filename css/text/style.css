@@ -1,0 +1,14 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@font-face {
+    font-family: 'Abc';
+    src: url('Ephesis-Regular.ttf');
+}
+
+h1{
+    font-family: "Abc";
+    font-size: 100px;
+}
+p{
+    font-family: "Pacifico", cursive;
+}
