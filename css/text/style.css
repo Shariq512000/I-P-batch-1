@@ -8,7 +8,32 @@
 h1{
     font-family: "Abc";
     font-size: 100px;
+    text-shadow: 11px 10px 10px rgba(0 , 0 , 0, 0.8);
 }
-p{
+.para{
     font-family: "Pacifico", cursive;
+}
+
+button{
+    background-color: blue;
+    color: white;
+}
+
+button:hover{
+    background-color: red;
+    color: yellow;
+}
+
+.newPara{
+    /* font-weight: 700; */
+    /* font-style: oblique; */
+    text-transform: capitalize;
+    /* word-spacing: 20px; */
+    /* letter-spacing: 10px; */
+    /* text-decoration: line-through; */
+    text-align: center;
+}
+
+a{
+    text-decoration: line-through;
 }
