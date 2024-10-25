@@ -14,10 +14,10 @@ body{
     /* border-width: 10px;
     border-style: solid;
     border-color: blue; */
-    border-top: 10px solid blue;
+    /* border-top: 10px solid blue;
     border-right: 10px dashed green;
     border-bottom: 10px dotted yellow;
-    border-left: 5px solid gray;
+    border-left: 5px solid gray; */
     /* padding-top: 20px;
     padding-right: 25px;
     padding-bottom: 15px;
@@ -31,9 +31,31 @@ body{
     margin-bottom: 15px;
     margin-left: 50px; */
     /* margin: 20px 25px 15px 50px; */
-    /* margin-left: auto;
-    margin-right: auto; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-radius: 15px;
     /* display: none; */
-    visibility: hi dden;
+    /* visibility: hidden; */
 
+    /* transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 1s; */
+
+    transition: all 1s ease-in-out;
+
+}
+
+.box:hover{
+    box-shadow: 10px 15px 15px black;
+    background-color: black;
+    color: white;
+}
+
+.rounded{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background-color: blue;
 }

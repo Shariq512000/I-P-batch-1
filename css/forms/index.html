@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <style>
+        body{
+            cursor: url("sqpurple.gif"), pointer;
+            height: 100vh;
+        }
+        #userName{
+            background-color: red;
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 20px;
+            margin-left: 30px;
+        }
+        #userName:focus{
+            background-color: yellow;
+        }
+        /* .item{
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+            border-radius: 50%;
+        } */
+        #submitBtn{
+            background-color: blue;
+            color: white;
+            padding: 10px 20px;
+            font-weight: 700;
+            font-size: 18px;
+            border-radius: 6px;
+            transition: all 0.4s ease-in-out;
+            cursor: not-allowed;
+        }
+        #submitBtn:hover{
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="item"></div> -->
+    <form>
+        <label for="userName">
+            Name: <input type="text" id="userName">
+        </label>
+        <br>
+        <!-- <button id="submitBtn" disabled>Submit</button> -->
+         <input id="submitBtn" disabled type="submit" value="Submit">
+    </form>
+</body>
+</html>
