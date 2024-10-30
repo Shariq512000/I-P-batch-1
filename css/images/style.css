@@ -1,0 +1,9 @@
+.section{
+    height: 100vh;
+    /* background-color: red;
+    background-image: url('apple.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom center; */
+    /* background: red url('apple.jpg') no-repeat center center; */
+    background-image: linear-gradient(to right bottom, red, blue, purple, yellow);
+}
