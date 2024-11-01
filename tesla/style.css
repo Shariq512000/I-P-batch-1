@@ -1,0 +1,102 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.logo svg{
+    width: 150px;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    column-gap: 20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
+.social-link ul{
+    list-style: none;
+    display: flex;
+    column-gap: 15px;
+}
+
+.section1{
+    background-image: url('images/1.avif');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+.section1 .sec1-content .sec1-group1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section1 .sec1-content .sec1-group1 h1{
+    font-size: 40px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.section1 .sec1-content .sec1-group1 h6{
+    font-size: 32px;
+    font-weight: 600;
+    color: white;
+    text-decoration: underline;
+    margin: 0;
+    padding: 0;
+}
+
+.section1 .sec1-content .sec1-group1 p{
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+.sec1-group2{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.order-btn{
+    background-color: #3e6ae1;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 12px 75px;
+    border-radius: 10px;
+    border: none;
+}
+
+.demo-btn{
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    padding: 12px 75px;
+    border-radius: 10px;
+    border: none;
+}
+
+.sec1-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
