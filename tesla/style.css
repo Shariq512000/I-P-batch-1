@@ -16,10 +16,20 @@ nav ul{
     column-gap: 20px;
 }
 
+nav li{
+    transition: all 0.5s ease-in-out;
+}
+
 nav a{
     text-decoration: none;
     color: black;
     font-weight: 700;
+    font-size: 18px;
+}
+
+nav li:hover{
+    /* font-size: 22px; */
+    transform: scale(1.2);
 }
 
 .social-link ul{

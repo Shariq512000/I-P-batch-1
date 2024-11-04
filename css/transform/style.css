@@ -1,0 +1,26 @@
+.item{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    background-color: red;
+    transition: all 1s ease-in-out;
+}
+
+.item2{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    background-color: blue;
+    transition: all 1s ease-in-out;
+}
+.item:hover{
+    /* transform: rotate(360deg); */
+    /* transform: scale(1.5); */
+    /* transform: translate(200px, 200px); */
+    transform: translate(200px);
+    /* margin-left: 200px; */
+}
+.container{
+    padding-top: 100px;
+    padding-left: 100px;
+}
