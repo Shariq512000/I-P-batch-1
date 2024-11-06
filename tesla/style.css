@@ -78,7 +78,6 @@ nav li:hover{
     padding: 0;
 }
 
-
 .sec1-group2{
     display: flex;
     justify-content: center;
@@ -109,4 +108,24 @@ nav li:hover{
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+}
+
+@media (max-width: 768px) {
+    header{
+        flex-direction: column;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .order-btn {
+        font-size: 14px;
+        padding: 10px 60px;
+    }
+
+    .demo-btn {
+        font-size: 14px;
+        padding: 10px 60px;
+    }
 }
