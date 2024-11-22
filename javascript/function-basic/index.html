@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function(Basic)</title>
+</head>
+<body>
+
+    <button onclick="myFunction()">Submit 1</button>
+    <br>
+    <br>
+    <br>
+
+    <button onclick="myFunction2()">Submit 2</button>
+    <br>
+    <br>
+    <br>
+
+    <button onclick="myFunction3()">Submit 3</button>
+
+    
+    <script>
+
+        /// GLOBAL VARIABLE ///
+        let userName = "John";
+        
+        function myFunction()
+        {
+            /// LOCAL VARIABLE ///
+            let newVar = "Abc";
+
+            // console.log("Console1")
+            // console.log("Console2")
+            // console.log("Console3")
+            // console.log("Console4")
+            // console.log("Console5")
+            // let userName = "John"
+            alert("Hello Function1 " + userName + newVar)
+        }
+
+        console.log(newVar);
+
+        function myFunction2()
+        {
+            // console.log("Console1")
+            // console.log("Console2")
+            // console.log("Console3")
+            // console.log("Console4")
+            // console.log("Console5")
+            // let userName = "John"
+            alert("Hello Function2 " + userName)
+        }
+
+        function myFunction3()
+        {
+            // console.log("Console1")
+            // console.log("Console2")
+            // console.log("Console3")
+            // console.log("Console4")
+            // console.log("Console5")
+            // let userName = "John"
+            alert("Hello Function3 " + userName)
+        }
+
+    </script>
+</body>
+</html>
