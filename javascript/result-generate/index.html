@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+</head>
+<body>
+    <label for="">
+        Total Number Of Physics: <input type="text" id="phyTotalMarks">
+    </label>
+    <br>
+    <label for="">
+        Obtained Number Of Physics: <input type="text" id="phyObtainedMarks">
+    </label>
+    <br>
+    <label for="">
+        Total Number Of Chemistry: <input type="text">
+    </label>
+    <br>
+    <label for="">
+        Obtained Number Of Chemistry: <input type="text">
+    </label>
+    <br>
+    <label for="">
+        Total Number Of Math: <input type="text">
+    </label>
+    <br>
+    <label for="">
+        Obtained Number Of Math: <input type="text">
+    </label>
+    <br>
+    <button onclick="check()">Check</button>
+
+    <div class="card">
+        <Table>
+            <tr>
+                <th>Subject</th>
+                <th>Total Number</th>
+                <th>Obtained</th>
+            </tr>
+            <tr>
+                <td>Physics</td>
+                <td id="phyTotal"></td>
+                <td id="phyObtain"></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td id="phyTotal">300</td>
+                <td id="phyObtain">150</td>
+            </tr>
+        </Table>
+    </div>
+
+    <script>
+        function check(){
+            let physicsTotalMark = Number(document.getElementById("phyTotalMarks").value);
+            let physicsObtainedMark = Number(document.getElementById("phyObtainedMarks").value);
+            document.getElementById("phyTotal").innerText = physicsTotalMark
+            document.getElementById("phyObtain").innerText = physicsObtainedMark
+            let percentage = (physicsObtainedMark / physicsTotalMark) * 100
+            console.log("percentage" , percentage);
+
+        }
+    </script>
+</body>
+</html>
