@@ -34,6 +34,8 @@
     <button onclick="sum()">Plus</button>
     <br>
     <button onclick="minus()">Minus</button>
+    <br>
+    <button onclick="reset()">Reset</button>
 
     <div id="nameContainer"></div>
 
@@ -47,6 +49,12 @@
         // let number1 = Number("5");
 
         // console.log(typeof number1)
+
+        function reset(){
+            document.getElementById("num1").value = "";
+            document.getElementById("num2").value = "";
+            document.getElementById("nameContainer").innerText = "";
+        }
 
         function sum(){
             let num1 = Number(document.getElementById("num1").value)
