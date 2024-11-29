@@ -4,64 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Result</title>
+    <style>
+        th, td{
+            padding: 10px 20px;
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
-    <label for="">
-        Total Number Of Physics: <input type="text" id="phyTotalMarks">
+    <label for="phyTotal">
+        Total Number of Physic <input type="number" id="phyTotal">
     </label>
     <br>
-    <label for="">
-        Obtained Number Of Physics: <input type="text" id="phyObtainedMarks">
-    </label>
-    <br>
-    <label for="">
-        Total Number Of Chemistry: <input type="text">
-    </label>
-    <br>
-    <label for="">
-        Obtained Number Of Chemistry: <input type="text">
-    </label>
-    <br>
-    <label for="">
-        Total Number Of Math: <input type="text">
-    </label>
-    <br>
-    <label for="">
-        Obtained Number Of Math: <input type="text">
-    </label>
-    <br>
-    <button onclick="check()">Check</button>
 
-    <div class="card">
-        <Table>
+    <label for="phyObt">
+        Obtained Number of Physic <input type="number" id="phyObt">
+    </label>
+
+    <br>
+    <label for="cheTotal">
+        Total Number of Chemistry <input type="number" id="cheTotal">
+    </label>
+
+    <br>
+    <label for="cheObt">
+        Obtained Number of Chemistry <input type="number" id="cheObt">
+    </label>
+
+    <br>
+    <label for="mathTotal">
+        Total Number of Math <input type="number" id="mathTotal">
+    </label>
+
+    <br>
+    <label for="mathObt">
+        Obtained Number of Math <input type="number" id="mathObt">
+    </label>
+
+    <br>
+
+    <button onclick="checkout()">Check</button>
+
+    <div class="">
+        <table>
             <tr>
                 <th>Subject</th>
-                <th>Total Number</th>
+                <th>Total</th>
                 <th>Obtained</th>
+                <th>Percentage</th>
+                <th>Grade</th>
             </tr>
+
             <tr>
-                <td>Physics</td>
-                <td id="phyTotal"></td>
-                <td id="phyObtain"></td>
+                <th>Physic</th>
+                <td id="showTotalPhy"></td>
+                <td id="showObtainedPhy"></td>
+                <td id="showPercentagePhy"></td>
+                <td id="showGradePhy"></td>
             </tr>
+
             <tr>
-                <td>Total</td>
-                <td id="phyTotal">300</td>
-                <td id="phyObtain">150</td>
+                <th>Chemistry</th>
+                <td id="showTotalChe"></td>
+                <td id="showObtainedChe"></td>
+                <td id="showPercentageChe"></td>
+                <td id="showGradeChe"></td>
             </tr>
-        </Table>
+
+            <tr>
+                <th>Math</th>
+                <td id="showTotalMath"></td>
+                <td id="showObtainedMath"></td>
+                <td id="showPercentageMath"></td>
+                <td id="showGradeMath"></td>
+            </tr>
+            
+            <tr>
+                <th>Overall</th>
+                <td id="showTotalAll"></td>
+                <td id="showObtainedAll"></td>
+                <td id="showPercentageAll"></td>
+                <td id="showGradeAll"></td>
+            </tr>
+        </table>
     </div>
 
-    <script>
-        function check(){
-            let physicsTotalMark = Number(document.getElementById("phyTotalMarks").value);
-            let physicsObtainedMark = Number(document.getElementById("phyObtainedMarks").value);
-            document.getElementById("phyTotal").innerText = physicsTotalMark
-            document.getElementById("phyObtain").innerText = physicsObtainedMark
-            let percentage = (physicsObtainedMark / physicsTotalMark) * 100
-            console.log("percentage" , percentage);
 
+
+    <script>
+        function checkout(){
+            /// Getting All Value From Input ///
+            let total_Number_Of_Physic = Number(document.getElementById("phyTotal").value);         /// Targeting Input Element and getting value
+            let obtained_Number_Of_Physic = Number(document.getElementById("phyObt").value);        /// Targeting Input Element and getting value
+            let percentage_Of_Physic = (obtained_Number_Of_Physic/total_Number_Of_Physic) * 100     /// Calculating Percentage Of Physics
+            let total_Number_Of_Chemistry = Number(document.getElementById("cheTotal").value);      /// Targeting Input Element and getting value
+            let obtained_Number_Of_Chemistry = Number(document.getElementById("cheObt").value);     /// Targeting Input Element and getting value
+            let total_Number_Of_Math = Number(document.getElementById("mathTotal").value);          /// Targeting Input Element and getting value
+            let obtained_Number_Of_Math = Number(document.getElementById("mathObt").value);         /// Targeting Input Element and getting value
+            /// Getting All Value From Input ///
+
+            /// Show Text of Physics on td Element ///
+            document.getElementById("showTotalPhy").innerText = total_Number_Of_Physic;             /// Targeting td Element and setting its value
+            document.getElementById("showObtainedPhy").innerText = obtained_Number_Of_Physic;       /// Targeting td Element and setting its value
+            document.getElementById("showPercentagePhy").innerText = percentage_Of_Physic + "%";    /// Targeting td Element and setting its value (we want to show percentage so we use concatinate % symbol)
+            /// Show Text of Physics on td Element ///
+
+            /// Check Grade of Physic And Show Conditionally ///
+            if(percentage_Of_Physic >= 80){                                         /// Check if percentage is equal or grater than 80
+                document.getElementById("showGradePhy").innerText = "A+"            /// Targeting td Element and setting its value
+            }else if(percentage_Of_Physic >= 70){                                   /// Check if percentage is equal or grater than 70
+                document.getElementById("showGradePhy").innerText = "A"             /// Targeting td Element and setting its value
+            }else if(percentage_Of_Physic >= 60){                                   /// Check if percentage is equal or grater than 60
+                document.getElementById("showGradePhy").innerText = "B"             /// Targeting td Element and setting its value
+            }else if(percentage_Of_Physic >= 50){                                   /// Check if percentage is equal or grater than 50
+                document.getElementById("showGradePhy").innerText = "C"             /// Targeting td Element and setting its value
+            }else{                                                                  /// If no condition match then else run
+                document.getElementById("showGradePhy").innerText = "Fail"          /// Targeting td Element and setting its value
+            }
+            /// Check Grade of Physic And Show Conditionally ///
+
+            /// Calculating Overall Numbers and Percentage ///
+            let total_Number_Of_All_Subject = total_Number_Of_Physic + total_Number_Of_Chemistry + total_Number_Of_Math                     /// Calculating All Subject Total Number
+            let obtained_Number_Of_All_Subject = obtained_Number_Of_Physic + obtained_Number_Of_Chemistry + obtained_Number_Of_Math         /// Calculating All Subject Obtained Number
+            let percentage_Of_All_Subject = (obtained_Number_Of_All_Subject / total_Number_Of_All_Subject) * 100                            /// Calculating All Subject Overall Percentage
+            /// Calculating Overall Numbers and Percentage ///
+
+            /// Showing Text of Overall row ///
+            document.getElementById("showTotalAll").innerText = total_Number_Of_All_Subject;                /// Targeting td Element and setting its value             
+            document.getElementById("showObtainedAll").innerText = obtained_Number_Of_All_Subject;          /// Targeting td Element and setting its value
+            document.getElementById("showPercentageAll").innerText = percentage_Of_All_Subject;             /// Targeting td Element and setting its value
+            /// Showing Text of Overall row ///
+
+            /// Checking Grade And Show ///
+            if(percentage_Of_All_Subject >= 80){
+                document.getElementById("showGradeAll").innerText = "A+"
+            }else if(percentage_Of_All_Subject >= 70){
+                document.getElementById("showGradeAll").innerText = "A"
+            }else if(percentage_Of_All_Subject >= 60){
+                document.getElementById("showGradeAll").innerText = "B"
+            }else if(percentage_Of_All_Subject >= 50){
+                document.getElementById("showGradeAll").innerText = "C"
+            }else{
+                document.getElementById("showGradeAll").innerText = "Fail"
+            }
+            /// Checking Grade And Show ///
         }
     </script>
+
 </body>
 </html>
