@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop</title>
+    <style>
+        td, th{
+            border: 1px solid black;
+            font-size: 20px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="mainContainer"></div>
+
+    <table id="mathTable">
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+    </table>
+
+    <br>
+    <button onclick="submit()">Add Paragraph</button>
+
+    <script>
+
+        // function submit(){
+        //     let newElement = "<p id='newPara'>Hello</p>"
+        //     document.getElementById("mainContainer").innerHTML = newElement
+        // }
+
+        let userName = "John";
+
+        // userName = userName + " Dev";
+            //  Template Method
+        // userName = `${userName} Dev`;
+        userName += " Dev";
+
+        console.log(userName)
+
+        
+        let tr = ""
+        console.log("LOOP START")
+        for(let i=1; i <= 10; i++){
+            // tr += "<tr><td>2</td><td>x</td>" + "<td>" + i + "</td><td>=</td>" + "<td>" + 2 * i +"</td></tr>"
+            tr += `<tr><td>2</td><td>x</td><td>${i}</td><td>=</td><td>${2 * i}</td></tr>`
+        }
+        document.getElementById("mathTable").innerHTML = tr
+        console.log("LOOP END" , tr)
+    </script>
+</body>
+</html>
