@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Loop</title>
+    <style>
+        td, th{
+            border: 1px solid black;
+            font-size: 20px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="number" placeholder="Enter Table Name" id="tableName">
+    <br>
+    <input type="number" placeholder="Enter Table Count" id="tableCount">
+    <br>
+    <button onclick="tableGenerate()">RUN</button>
+
+    <table id="mathTable">
+    </table>
+
+    <script>
+        function tableGenerate(){
+            let tableName = Number(document.getElementById("tableName").value)
+            let tableCount = Number(document.getElementById("tableCount").value)
+            let tr = ""
+            ///// LOOP /////
+            for(let i=1; i <= tableCount; i++){
+                tr += 
+                    `<tr>
+                        <td>${tableName}</td>
+                        <td>x</td>
+                        <td>${i}</td>
+                        <td>=</td>
+                        <td>${tableName * i}</td>
+                    </tr>`
+            }
+            ///// LOOP /////
+            document.getElementById("mathTable").innerHTML = tr
+        }
+    </script>
+</body>
+</html>
