@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Flag</title>
+</head>
+
+    <script>
+        let cities = ["Karachi" , "Lahore", "Islamabad", "Pindi", "Hydrabad", "Peshawar"]
+        // console.log(cities[0])
+        // console.log(cities[1])
+        // console.log(cities[2])
+        // console.log(cities[3])
+        // console.log(cities[4])
+        let userCity = "Lahore";
+
+        let isMatched = "no"
+
+        for(let i=0; i < cities.length; i++){
+            // console.log(cities[i])
+            if(userCity == cities[i]){
+                // alert("City Matched " + cities[i])
+                isMatched = "yes";
+                break;
+            }
+            console.log(cities[i])
+        }
+
+        if(isMatched == "no"){
+            alert("City did not Match")
+        }else{
+            alert("City Matched")
+        }
+
+    </script>
+</body>
+</html>
