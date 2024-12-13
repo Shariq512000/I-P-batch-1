@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="number" id="userNumber1">
+    <br>
+    <input type="number" id="userNumber2">
+    <br>
+    <button onclick="submit()">submit</button>
+
+    <script>
+        function sum(num1 = 3, num2 = 5){
+            let result = num1 + num2;
+            return result;
+            // console.log(result);
+        }
+
+        function submit(){
+            let userNum1 = Number(document.querySelector("#userNumber1").value);
+            let userNum2 = Number(document.querySelector("#userNumber2").value);
+
+            let funcVal = sum(6 , 8);
+            console.log(funcVal);
+        }
+    </script>
+</body>
+</html>
