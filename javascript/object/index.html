@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+
+    <ul id="hostingList">
+        <!-- <li>The cost of the Basic package is $3.99 per month.</li>
+        <li>The cost of the Professional package is $5.99 per month.</li>
+        <li>The cost of the Ultimate package is $9.99 per month.</li> -->
+    </ul>
+    
+    <script>
+        // let plan1Name = "Basic";
+        // let plan1Price = 3.99;
+        // let plan1Space = 100;
+        // let plan1Transfer = 1000;
+        // let plan1Pages = 10;
+        // let plan2Name = "Professional";
+        // let plan2Price = 5.99;
+        // let plan2Space = 500;
+        // let plan2Transfer = 5000;
+        // let plan2Pages = 50;
+        // let plan3Name = "Ultimate";
+        // let plan3Price = 9.99;
+        // let plan3Space = 2000;
+        // let plan3Transfer = 50000;
+        // let plan3Pages = 500;
+
+        // let plan1 = {
+        //     name: "Basic",
+        //     price: 3.99,
+        //     space: 100,
+        //     tranfer: 1000,
+        //     page: 10,
+        //     discountMonth: ["January" , "March", "April", "May", "June"]
+        // }
+
+        // let plan2 = {
+        //     name: "Professional",
+        //     price: 5.99,
+        //     space: 500,
+        //     tranfer: 5000,
+        //     page: 50
+        // }
+
+        // let plan3 = {
+        //     name: "Ultimate",
+        //     price: 9.99,
+        //     space: 2000,
+        //     tranfer: 20000,
+        //     page: 500
+        // }
+
+        let hostingPlan = [
+            {
+                name: "Basic",
+                price: 3.99,
+                space: 100,
+                transfer: 1000,
+                page: 10,
+                discountMonth: ["January" , "March", "April", "May", "June"]
+            },
+            {
+                name: "Professional",
+                price: 5.99,
+                space: 500,
+                transfer: 5000,
+                page: 50
+            },
+            {
+                name: "Ultimate",
+                price: 9.99,
+                space: 2000,
+                transfer: 20000,
+                page: 500
+            },
+            {
+                name: "Ultimate2",
+                price: 9.99,
+                space: 2000,
+                transfer: 20000,
+                page: 500
+            }
+        ];
+
+        // console.log(hostingPlan[0].name)
+
+        let li = ""
+
+        for(let i=0; i < hostingPlan.length; i++){
+            // console.log("The cost of the " + hostingPlan[i].name + " package is $" + hostingPlan[i].price + " per month. ")
+            li += `<li>
+                    The cost of the ${hostingPlan[i].name} package is $ ${hostingPlan[i].price} per month.
+                </li>`
+        }
+        document.getElementById("hostingList").innerHTML = li
+        // alert("The cost of the " + plan1.name + " package is $" + plan1.price + " per month. " + plan1.discountMonth[0])
+    </script>
+</body>
+</html>
