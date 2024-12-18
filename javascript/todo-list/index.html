@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <input type="text" id="itemName">
+    <br>
+    <button onclick="addItems()">Add</button>
+
+    <ul class="result">
+
+    </ul>
+
+    
+
+    <script>
+
+        let items = [];
+
+        function printLi(){
+            let li = "";
+
+            for(let i=0; i < items.length; i++){
+                li += `<li>
+                        ${items[i]}
+                        <button  onclick="deleteItem(${i})">Delete</button>
+                    </li>`
+            }
+            document.querySelector(".result").innerHTML = li;
+        }
+
+        function addItems(){
+            let itemName = document.getElementById("itemName").value;
+            // console.log(itemName)
+
+            items.push(itemName)
+            printLi()
+        }
+
+        function deleteItem(id){
+            // console.log(id)
+            items.splice(id, 1);
+
+            printLi()
+        }
+
+    </script>
+
+</body>
+</html>

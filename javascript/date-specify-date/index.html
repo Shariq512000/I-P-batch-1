@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+    <style>
+        #result{
+            font-size: 30px;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="result">
+
+    </div>
+    
+    <script>
+        
+        
+        setInterval(function(){
+            // console.log("setInterval");
+            let currentDate = new Date();
+            let monthArr = ["Jan" , "Feb" , "Mar" , "Apr" , "May" , "Jun" , "Jul" , "Aug" , "Sep" , "Oct" , "Nov" , "Dec"];
+
+            let date = currentDate.getDate();
+            let month = monthArr[currentDate.getMonth()];
+            let year = currentDate.getFullYear();
+            let hour = currentDate.getHours();
+            let min = currentDate.getMinutes();
+            let sec = currentDate.getSeconds();
+
+            let fullTime = `${date} ${month} ${year} ${hour}:${min}:${sec}`;
+
+            // console.log(fullTime)
+
+            document.getElementById("result").innerText = fullTime
+        } , 1000)
+
+        // setTimeout(function(){
+        //     console.log("setTimeout")
+        // } , 5000)
+    </script>
+</body>
+</html>
