@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specifying Date</title>
+</head>
+<body>
+    
+    <script>
+        let currentDate = new Date();
+        console.log("currentDate: " , currentDate.getTime());
+        
+        let newDate = new Date("2025-01-01");
+
+        console.log("newDate: ", newDate.getTime());
+
+        let diffMs = newDate.getTime() - currentDate.getTime();
+
+        console.log("diffMs: ", diffMs);
+
+        let second = diffMs / 1000;
+        let minute = second / 60;
+        let hour = minute / 60;
+        let day = hour / 24;
+
+        console.log("Days: ", Math.floor(day))
+
+    </script>
+</body>
+</html>
