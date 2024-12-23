@@ -6,25 +6,27 @@
     <title>Specifying Date</title>
 </head>
 <body>
-    
+
+    <input type="date" id="userDate">
+    <br>
+    <button onclick="checkDifference()">Check Difference</button>
+    <br>
+    <div id="result"></div>
     <script>
-        let currentDate = new Date();
-        console.log("currentDate: " , currentDate.getTime());
-        
-        let newDate = new Date("2025-01-01");
+        function checkDifference(){
+            let currentDate = new Date();
+            let userDate = document.getElementById("userDate").value      // 2024-12-23
+            let newDate = new Date(userDate);
+            let diffMs = newDate.getTime() - currentDate.getTime();
+            let second = diffMs / 1000;
+            let minute = second / 60;
+            let hour = minute / 60;
+            let day = hour / 24;
 
-        console.log("newDate: ", newDate.getTime());
+            console.log("Days: ", Math.floor(day))
 
-        let diffMs = newDate.getTime() - currentDate.getTime();
-
-        console.log("diffMs: ", diffMs);
-
-        let second = diffMs / 1000;
-        let minute = second / 60;
-        let hour = minute / 60;
-        let day = hour / 24;
-
-        console.log("Days: ", Math.floor(day))
+            document.getElementById("result").innerText = `Days: ${Math.floor(day)}`
+        }
 
     </script>
 </body>

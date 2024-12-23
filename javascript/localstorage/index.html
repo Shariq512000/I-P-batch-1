@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Storage</title>
+</head>
+<body>
+    <!-- <label for="email">
+        Email:
+        <input type="text" id="email">
+    </label>
+    <br>
+    <label for="password">
+        Password:
+        <input type="text" id="password">
+    </label>
+    <br>
+    <button>login</button> -->
+    <!-- <button onclick="setValueOnLocalStorage()">Set Value</button>
+    <br>
+    <button onclick="getValueFromLocalStorage()">Get Value</button>
+    <br>
+    <button onclick="removeValueFromLocalStorage()">Remove Value</button> -->
+    <script>
+        function setValueOnLocalStorage(){
+            localStorage.setItem("isLogin" , "true")
+        }
+
+        function getValueFromLocalStorage(){
+            console.log(localStorage.getItem("isLogin"))
+        }
+
+        function removeValueFromLocalStorage(){
+            localStorage.removeItem("isLogin")
+        }
+    </script>
+</body>
+</html>

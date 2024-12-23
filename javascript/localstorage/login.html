@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    
+    <label for="email">
+        Email:
+        <input type="text" id="email">
+    </label>
+
+    <br>
+    <label for="password">
+        Password:
+        <input type="text" id="password">
+    </label>
+    <br>
+    <button onclick="login()">Login</button>
+
+
+    <script>
+        function login(){
+            let userEmail = document.getElementById("email").value;
+            let storageEmail = localStorage.getItem("userEmail");
+
+            let userPassword = document.getElementById("password").value;
+            let storagePassword = localStorage.getItem("userPassword");
+
+            if(userEmail == storageEmail){
+                if(userPassword == storagePassword){
+                    alert("You are now logedin")
+                }else{
+                    alert("Password did not matched")
+                }
+            }else{
+                alert("Email did not matched")
+            }
+        }
+    </script>
+
+</body>
+</html>
