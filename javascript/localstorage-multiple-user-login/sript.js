@@ -3,6 +3,11 @@ function signup(){
     let userEmail = document.getElementById("userEmail").value;
     let userPassword = document.getElementById("userPassword").value;
 
+    if(userName == "" || userEmail == "" || userPassword == ""){
+        alert("All Fields Are Required")
+        return;
+    }
+
     let userArr = JSON.parse(localStorage.getItem("users"))
 
     let userDetail = {

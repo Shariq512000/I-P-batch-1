@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="">
+        <div class="" style="display: flex; align-items: center;">
+            <img id="conditionImg" src="" alt="">
+            <p style="font-size: 20px;" id="tem">20°C</p>
+        </div>
+        <p>Location: Karachi , Sindh , Pakistan</p>
+        <p>Fahrenheit: 73.2 °F</p>
+        <p>Feelslike: 22.5 °C</p>
+        <p>Humidity: 17%</p>
+        <p>Visibility: 10km</p>
+        <p>Wind Speed: 11.2kp/h</p>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script>
+
+        // function myFunc(){
+
+        // }
+
+        // const myFunc = () => {}
+
+        let city = "London";
+
+
+        axios.get(`https://api.weatherapi.com/v1/current.json?key=d347dfb1a00b4f86add45435242510&q=${city}`)
+        .then(function(response){
+            console.log("Response" , response.data);
+            document.getElementById("conditionImg").src = `https:${response.data.current.condition.icon}`
+        })
+        .catch(function(error){
+            console.log("Error" , error);
+        })
+
+
+        // fetch(`https://api.weatherapi.com/v1/current.json?key=d347dfb1a00b4f86add45435242510&q=${city}`)
+        // .then(function(response){
+        //     let jsonResponse = response.json()
+        //     console.log("Response", jsonResponse)
+        //     // document.getElementById("result").innerText = jsonResponse
+        //     document.querySelector("#weatherIcon").src = `https:${jsonResponse.data.current.condition.icon}`;
+        // }).catch(function(error){
+        //     console.log("Error" , error)
+        // })
+
+
+    </script>
+</body>
+</html>
