@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+
+    <label for="cityName">
+        City Name: <input type="text" id="cityName">
+    </label>
+    <br>
+    <button onclick="checkWeather()">Check Weather</button>
+
+    <div class="">
+        <img src="" alt="" id="weatherImg">
+        <h4 id="weatherText"></h4>
+        <ul>
+            <li id="location">
+                
+            </li>
+            <li id="temp">
+                
+            </li>
+            <li id="feels">
+                Feelslike: 22.2°C
+            </li>
+            <li id="humi">
+                Humidity: 25
+            </li>
+            <li id="wind">
+                Wind kph: 11.2 kph
+            </li>
+        </ul>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        function checkWeather(){
+            let city = document.getElementById("cityName").value
+            axios.get(`https://api.weatherapi.com/v1/current.json?key=d347dfb1a00b4f86add45435242510&q=${city}`)
+            .then((response) => {
+                console.log(response.data);
+                let currentLocation = response.data.location
+                let currentWeather = response.data.current
+                document.getElementById("weatherImg").src = `https:${currentWeather.condition.icon}`
+                document.getElementById("weatherText").innerText = `(${currentWeather.condition.text})`
+                document.getElementById("location").innerText = `Location: ${currentLocation.name}, ${currentLocation.region}, ${currentLocation.country}`
+                document.getElementById("temp").innerText = `Temperature: ${currentWeather.temp_c}°C`
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+        }
+
+        let currentDate = new Date();
+        let hour = currentDate.getHours();
+
+        if(hour > 12){
+            hour = hour - 12
+        }
+        console.log(hour)
+    </script>
+</body>
+</html>
