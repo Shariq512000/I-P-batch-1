@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+AU+VIC+Guides&display=swap');
+
+body{
+    /* font-family: "Playwrite AU VIC Guides", serif; */
+}
+
+button{
+    
+}
+.topContainer{
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    width: 800px;
+    padding: 50px;
+    border-radius: 8px;
+    border: 1px solid #D9D9D9;
+}
+.subContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.timingCard{
+    padding: 30px 60px;
+    border-radius: 8px;
+    border: 1px solid #D9D9D9;
+    box-shadow: 5px 3px 30px rgba(0 , 0 , 0, 0.3);
+}
+.timingText{
+    font-size: 20px;
+    font-weight: 500;
+}

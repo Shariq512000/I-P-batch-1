@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="cityName">
+        City: <input type="text" id="cityName">
+    </label>
+    <br>
+    <label for="countryName">
+        Country: <input type="text" id="countryName">
+    </label>
+    <br>
+    <button onclick="checkNamazTiming()">Check Timing</button>
+    <div class="topContainer">
+        <div class="mainContainer">
+            <div class="">
+                <p class="timingText">Date: <span id="date"></span></p>
+            </div>
+            <div class="subContainer">
+                <div class="timingCard">
+                    <p class="timingText">Fajr: <span id="fajr"></span></p>
+                </div>
+    
+                <div class="timingCard">
+                    <p class="timingText">Zuhr: <span id="zuhr"></span></p>
+                </div>
+            </div>
+            <div class="subContainer">
+                <div class="timingCard">
+                    <p class="timingText">Asr: <span id="asr"></span></p>
+                </div>
+    
+                <div class="timingCard">
+                    <p class="timingText">Magrib: <span id="mgr"></span></p>
+                </div>
+            </div>
+            <div class="subContainer">
+                <div class="timingCard">
+                    <p class="timingText">Isha: <span id="ish"></span></p>
+                </div>
+    
+                <div class="timingCard">
+                    <p class="timingText">Sunrise: <span id="sunrise"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=1 -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+
+        function timeConverter(value){
+            let splittedTime = value.split(":");
+            if(splittedTime[0] > 12){
+                let convertedHour = splittedTime[0] - 12;
+                return `${convertedHour}:${splittedTime[1]} PM`
+            }else if(splittedTime[0] == 12){
+                return `${value} PM`
+            }else{
+                return `${value} AM`
+            }
+        }
+
+        function checkNamazTiming(){
+            let city = document.getElementById("cityName").value
+            let country = document.getElementById("countryName").value
+            axios.get(`https://api.aladhan.com/v1/timingsByCity?city=${city}&country=${country}&method=1`)
+            .then((res) => {
+                let timing = res.data.data
+                console.log("timing : ", timing)
+                document.querySelector("#fajr").innerText = timeConverter(timing.timings.Fajr);
+                document.querySelector("#zuhr").innerText = timeConverter(timing.timings.Dhuhr)
+                document.querySelector("#asr").innerText = timeConverter(timing.timings.Asr)
+                document.querySelector("#mgr").innerText = timeConverter(timing.timings.Maghrib)
+                document.querySelector("#ish").innerText = timeConverter(timing.timings.Isha)
+                document.querySelector("#sunrise").innerText = timeConverter(timing.timings.Sunrise)
+                document.querySelector("#date").innerText = `${timing.date.readable} (${timing.date.hijri.date} سَنَة هِجْرِيَّة)`
+                document.querySelector(".mainContainer").style.backgroundColor = "green"
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+        }   
+    </script>
+</body>
+</html>
