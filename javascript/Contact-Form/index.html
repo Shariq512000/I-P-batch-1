@@ -8,11 +8,11 @@
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
     <script type="text/javascript">
-        (function(){
-            emailjs.init({
-                publicKey: "Tl060mLgM1VegwCcC",
-            });
-        })();
+    (function(){
+        emailjs.init({
+            publicKey: "Tl060mLgM1VegwCcC",
+        });
+    })();
     </script>
 </head>
 <body>
@@ -38,23 +38,26 @@
 
     <script>
         function submit(){
-            let fullName = document.getElementById("userName").value;
+            let userName = document.getElementById("userName").value;
             let userEmail = document.getElementById("email").value;
             let subject = document.getElementById("subject").value;
-            let message = document.getElementById("message").value
+            let userMessage = document.getElementById("message").value;
 
             let params = {
-                full_name: fullName,
-                subject: subject,
+                user_name: userName,
                 email: userEmail,
-                message: message
+                subject: subject,
+                message: userMessage
             }
-            /// Service Id, Template Id, parameter object
-            emailjs.send("service_o99m92q", "template_1u6o39r", params).then((res) => {
-                alert("Query Sent");
+            ///             Service ID      Template ID        Object
+            emailjs.send("service_ygd5il4", "template_t4dhjht", params)
+            .then((res) => {
+                alert("Query Sent")
                 console.log(res)
             })
-            .catch((error) => {console.log(error)})
+            .catch((err) => {
+                console.log(err)
+            })
         }
     </script>
 </body>
